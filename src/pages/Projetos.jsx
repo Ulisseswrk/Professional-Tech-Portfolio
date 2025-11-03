@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 
 const Projects = () => {
@@ -9,19 +8,29 @@ const Projects = () => {
   const listaprojetos = [
     {
       id: 1,
-      title: "Portfolio Website",
-      description: "Site pessoal desenvolvido com React e Tailwind",
-      tags: ["React", "Tailwind", "JavaScript"],
-      image: "/project1.jpg"
+      title: "Watercall Solutions",
+      description: "Site pra GS da FIAP focando em features e personalização.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      image: "/projeto1.png",
+      github: "https://ulisseswrk.github.io/Landing-Page-Watercall/"
     },
     {
       id: 2,
-      title: "E-commerce Dashboard",
-      description: "Dashboard administrativo para e-commerce",
-      tags: ["Next.js", "TypeScript", "Tailwind"],
-      image: "/project2.jpg"
+      title: "Portal Passa a Bola ",
+      description: "Site de esportes focado em interatividade e responsividade.",
+      tags: ["React", "Tailwind", "JavaScript"],
+      image: "/projeto2.png",
+      github: "https://front-end-design-web-development-sp.vercel.app/"
     },
-    // Adicione mais projetos aqui
+    {
+      id: 3,
+      title: "Pipeline de limpeza de dados",
+      description: "Pipeline automatizado para limpeza e pré-processamento de dados.",
+      tags: ["Python", "Pandas"],
+      image: "/projeto3.png",
+      github: "https://front-end-design-web-development-sp.vercel.app/"
+    },
+    
   ];
 
   // Filtra os projetos com base nos termos da busca
@@ -31,7 +40,7 @@ const Projects = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 py-20 px-4">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 px-4">
         {/* Barrinha de busca do site */}
       <div className="max-w-6xl mx-auto mb-12">
         <div className="relative">
@@ -50,9 +59,12 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.length > 0 ? (
           filteredProjects.map(project => (
-            <div
+            <a
               key={project.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              href={project.github || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 cursor-pointer hover:scale-105 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800"
             >
               <img
                 src={project.image}
@@ -61,19 +73,19 @@ const Projects = () => {
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map(tag => (
                     <span
                       key={tag}
-                      className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full"
+                      className="bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 text-sm px-3 py-1 rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))
         ) : (
           <div className="col-span-full text-center text-gray-600 text-xl">

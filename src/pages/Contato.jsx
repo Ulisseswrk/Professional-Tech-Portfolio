@@ -3,48 +3,48 @@ import React from 'react';
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const dados = Object.fromEntries(formData);
+    const dadosForm = new FormData(e.target);
+    const dados = Object.fromEntries(dadosForm);
     alert(`Mensagem recebida!\n\nNome: ${dados.name}\nEmail: ${dados.email}\nMensagem: ${dados.message}`);
     e.target.reset();
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-20 px-4">
-      <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Entre em Contato</h2>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 px-4">
+      <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">Entre em Contato</h2>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-gray-700 mb-2">Nome</label>
+            <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2">Nome</label>
             <input
               type="text"
               id="name"
               name="name"
               required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+            <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
             <input
               type="email"
               id="email"
               name="email"
               required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
             />
           </div>
           
           <div>
-            <label htmlFor="message" className="block text-gray-700 mb-2">Mensagem</label>
+            <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2">Mensagem</label>
             <textarea
               id="message"
               name="message"
               required
               rows="5"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
             ></textarea>
           </div>
           

@@ -3,6 +3,8 @@ export default {
     "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  // enable class-based dark mode
+  darkMode: 'class',
     theme: {
       extend: {
         screens: {

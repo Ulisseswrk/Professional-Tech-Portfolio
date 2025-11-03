@@ -16,7 +16,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-blue-900 text-white py-8">
+    <footer className="bg-blue-900 text-white py-8 dark:bg-slate-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
           <div className="flex space-x-6 mb-4">
@@ -36,7 +36,7 @@ const Footer = () => {
               );
             })}
           </div>
-          <p className="text-gray-300 text-sm">
+          <p className="text-gray-300 text-sm dark:text-gray-400">
             © {new Date().getFullYear()} Ulisses Abreu. Todos os direitos reservados.
           </p>
         </div>
