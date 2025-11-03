@@ -1,15 +1,9 @@
 import React from "react";
 
+// Simple animated link: hover underline. Kept minimal for accessibility.
 function LinkAnimado({ children, href = "#" }) {
   return (
-    <a
-      href={href}
-      className="relative text-[18px] font-medium
-                 after:absolute after:left-0 after:bottom-[-4px]
-                 after:h-[2px] after:w-0 after:bg-[#c5bdbd]
-                 after:transition-all after:duration-400
-                 hover:after:w-full"
-    >
+    <a href={href} className="text-lg font-medium hover:underline">
       {children}
     </a>
   );

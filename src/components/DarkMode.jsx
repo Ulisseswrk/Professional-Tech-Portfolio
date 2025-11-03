@@ -1,22 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import { FaSun, FaMoon } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 
 function DarkModeButton() {
-  const [Dark, Claro] = useState(false);
+  const { darkMode, toggleDarkMode } = useTheme();
 
   return (
     <button
-      onClick={() => Claro(!Dark)}
-      className={`relative w-16 h-8 rounded-full transition-colors duration-300 
-        ${Dark ? "bg-gray-300" : "bg-gray-700"}`}
+      onClick={toggleDarkMode}
+      aria-label={darkMode ? "Ativar modo claro" : "Ativar modo escuro"}
+      className="p-2 rounded-md hover:bg-blue-800 transition-colors text-white"
     >
-      <span className="absolute left-2 top-1.5 text-xs">☀️</span>
-      <span className="absolute right-2 top-1.5 text-xs">🌙</span>
-
-      <span
-        className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md 
-          transform transition-transform duration-300 ease-in-out
-          ${Dark ? "translate-x-8" : "translate-x-0"}`}
-      />
+      {darkMode ? <FaSun className="text-xl text-yellow-300" /> : <FaMoon className="text-xl text-blue-200" />}
     </button>
   );
 }
