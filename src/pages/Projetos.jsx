@@ -4,7 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 const Projects = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
-  // Lista de projetos (você pode expandir com seus próprios projetos)
+  // Lista de projetos (coloquei só alguns, tenho realmente muitos klkkk)
   const listaprojetos = [
     {
       id: 1,

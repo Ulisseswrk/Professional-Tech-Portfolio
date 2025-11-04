@@ -48,7 +48,7 @@ function Home() {
           </div>
         </div>
 
-        {/* Lado Direito - Imagem */}
+        {/* Imagem do lado direito */}
         <div className="relative max-1150:hidden">
           <img
             src={`${import.meta.env.BASE_URL}boneco-ulisses.png`}

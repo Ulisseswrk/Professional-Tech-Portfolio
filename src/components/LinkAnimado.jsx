@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// LinkAnimado: when passed `to` it uses react-router's Link, otherwise falls back to <a href>
 function LinkAnimado({ children, to, href = "#", className = "" }) {
   const base =
     "relative text-[18px] font-medium after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-gray-600 after:transition-all after:duration-300 hover:after:w-full";
