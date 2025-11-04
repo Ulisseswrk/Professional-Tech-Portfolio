@@ -4,7 +4,6 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(() => {
-    // Prefer a saved preference when available. If none exists, start light (false).
     try {
       const saved = localStorage.getItem('darkMode');
       return saved !== null ? JSON.parse(saved) : false;
@@ -14,10 +13,8 @@ export const ThemeProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    // Atualiza o localStorage quando o modo escuro muda
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
     
-    // Atualiza a classe dark no elemento html
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {

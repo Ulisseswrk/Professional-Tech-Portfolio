@@ -50,10 +50,11 @@ function Home() {
 
         {/* Lado Direito - Imagem */}
         <div className="relative max-1150:hidden">
-          <img 
-            src="/boneco-ulisses.png" 
-            alt="Boneco do Ulisses" 
-            className="h-[65vh] w-auto object-contain relative z-0"/>
+          <img
+            src={`${import.meta.env.BASE_URL}boneco-ulisses.png`}
+            alt="Boneco do Ulisses"
+            className="h-[65vh] w-auto object-contain relative z-0"
+          />
         </div>
         
       </div>
@@ -79,7 +80,7 @@ function Home() {
 
           <div className="md:w-1/2 flex justify-center md:justify-end">
             <div className="w-80 h-80 bg-white dark:bg-gray-800 overflow-hidden">
-              <img src="/eu-site.jpg" alt="Foto de Perfil" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}eu-site.jpg`} alt="Foto de Perfil" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

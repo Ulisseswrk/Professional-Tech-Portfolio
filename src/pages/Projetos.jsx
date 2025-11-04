@@ -11,7 +11,7 @@ const Projects = () => {
       title: "Watercall Solutions",
       description: "Site pra GS da FIAP focando em features e personalização.",
       tags: ["HTML", "CSS", "JavaScript"],
-      image: "/projeto1.png",
+      image: "projeto1.png",
       github: "https://ulisseswrk.github.io/Landing-Page-Watercall/"
     },
     {
@@ -19,7 +19,7 @@ const Projects = () => {
       title: "Portal Passa a Bola ",
       description: "Site de esportes focado em interatividade e responsividade.",
       tags: ["React", "Tailwind", "JavaScript"],
-      image: "/projeto2.png",
+      image: "projeto2.png",
       github: "https://front-end-design-web-development-sp.vercel.app/"
     },
     {
@@ -27,7 +27,7 @@ const Projects = () => {
       title: "Pipeline de limpeza de dados",
       description: "Pipeline automatizado para limpeza e pré-processamento de dados.",
       tags: ["Python", "Pandas"],
-      image: "/projeto3.png",
+      image: "projeto3.png",
       github: "https://front-end-design-web-development-sp.vercel.app/"
     },
     
@@ -67,7 +67,7 @@ const Projects = () => {
               className="block bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 cursor-pointer hover:scale-105 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800"
             >
               <img
-                src={project.image}
+                src={`${import.meta.env.BASE_URL}${project.image}`}
                 alt={project.title}
                 className="w-full h-48 object-cover"
               />
